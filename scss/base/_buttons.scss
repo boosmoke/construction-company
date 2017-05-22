@@ -1,0 +1,23 @@
+/* buttons
+===============*/
+.button{
+  display:inline-block;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-width: 2px;
+  border-style: solid;
+  padding: 16px 28px;
+  border-color: black;
+  color: black;
+  font-weight: 400;
+}
+@media (min-width:60rem ){
+  .button{
+    
+  }
+}
+
+

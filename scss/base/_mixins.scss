@@ -1,0 +1,10 @@
+// _mixins
+// ========
+
+%extend clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

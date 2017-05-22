@@ -1,0 +1,263 @@
+// _base.scss
+// ==============
+
+*{
+  box-sizing: border-box;
+  transition: all ease-in-out .25s;
+}
+
+body{
+  font-family: $bodyFont;
+  margin: 0;
+  text-align: center;
+  //fade in website on page load
+  opacity: 1;
+  transition: 1s opacity;
+}
+ //fade in website on page load
+/*
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+*/
+img{
+  max-width:100%;
+  height: auto;
+}
+
+.container{
+  width: 95%;
+  max-width: 83rem;
+  margin: 0 auto;
+}
+
+section{
+  @extend clearfix;
+  //padding:7.5rem 0;
+}
+
+footer{
+  @extend clearfix;
+}
+
+ /* Column system
+===============*/
+
+[class^=col-]{
+  width:100%;
+  margin-top: 1em;
+}
+
+
+[class^=col-]:first-child{
+  margin-top:0;
+}
+
+.col-1{
+  width: 33.333334%;
+  float:left;
+  text-align: center;
+}
+
+@media (min-width:40rem ){
+
+  [class^=col-]{
+    float:left;
+    padding: 0 .5em;
+    margin-top: 0;
+  }
+
+  [class^=col-]:first-child{
+    padding-left: 0;
+  }
+
+  [class^=col-]:last-child{
+    padding-right: 0;
+  }
+
+  .col-3{
+    width:50%;
+  }
+
+  .col-1{
+    width: 16.6666%;
+  }
+
+}
+
+/* Parallax
+===============*/
+
+.parallax--bg, .parallax--box{
+  transition: initial;
+}
+
+/* header
+===============*/
+
+.main-header{
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.logo{
+  position:absolute;
+  top: 0;
+  left:50%;
+  padding-top: 1em;
+  margin-left: -59px;
+} 
+
+//mobile menu
+.main-nav{
+  background: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 100%;
+  font-size: 1.5rem;
+  z-index:101;
+  transition: all ease-in-out 250ms;
+  overflow:hidden;
+  text-transform: uppercase;
+  &.is-open{
+    left: 0;
+  }
+
+  ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    //height: 100vh;
+  }
+  li{
+    //flex: 1 1 auto;
+    border-bottom: 1px solid $shadow;
+    display: flex;
+  }
+  a{
+    text-decoration: none;
+    flex-basis: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1rem 1rem 2rem;
+    font-weight: 300;
+    &:hover{
+      background: black;
+    }
+  }
+}
+// mobile hamburger
+
+.nav-toggle{
+  display:block;
+  padding: 1em;
+  position: absolute;
+  right:1em;
+  top: 1em;
+  cursor: pointer;
+  z-index:102;
+  .hamburger, .hamburger::before, .hamburger::after{
+    content: '';
+    display: block;
+    width: 2em;
+    height: 3px;
+    background: $white;
+    transition: transform ease-in-out 250ms;
+  }
+  .hamburger::before{
+    transform: translateY(-6px);
+  }
+  .hamburger::after{
+    transform: translateY(3px);
+  }
+  .hamburger.is-open{
+    transform: rotate(45deg);
+    &::after{
+      transform: rotate(-90deg);
+    }
+    &::before{
+      display:none;
+    }
+  }
+}
+
+
+
+
+@media (min-width:37rem ){
+  .nav-toggle{
+    display:none;
+  }
+  .logo{
+    float:left;
+    width:118px;
+    margin-left:1em;
+    left:0;
+    margin-top: .5em;
+  }
+
+  .main-nav{
+    display: inline-block;
+    position: relative;
+    background:none;
+    float:right;
+    font-size: 1rem;
+    margin-left: 4em;
+    left:0;
+  }
+
+  //////////////
+  .main-nav ul{
+  margin: 0;
+  padding: 0;
+  list-style:none;
+  display: inline-block;
+  height:100%;
+}
+
+.main-nav li{
+  display: inline-block;
+  margin: 1em;
+  border-bottom: none;
+}
+
+.main-nav a{
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.9375rem .4rem;
+  &:hover,
+  &:focus{
+    background:none;
+    color: blue;
+  }
+}
+//////////
+}
+
+
+@media (min-width:60rem ){
+  .main-nav{
+    margin-left: 0;
+    a{
+      font-size: 1.2rem;
+    }
+  }
+}
+
+
+ /* Footer
+===============*/
+
+footer{
+  color: $white;
+  text-align: left;
+  padding: 5em 0;
+}
+
