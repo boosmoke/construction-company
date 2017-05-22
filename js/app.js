@@ -10219,151 +10219,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-/**
- * author Christopher Blum
- *    - based on the idea of Remy Sharp, http://remysharp.com/2009/01/26/element-in-view-event-plugin/
- *    - forked from http://github.com/zuk/jquery.inview/
- */
-(function (factory) {
-  if (typeof define == 'function' && define.amd) {
-    // AMD
-    define(['jquery'], factory);
-  } else if (typeof exports === 'object') {
-    // Node, CommonJS
-    module.exports = factory(require('jquery'));
-  } else {
-      // Browser globals
-    factory(jQuery);
-  }
-}(function ($) {
-
-  var inviewObjects = [], viewportSize, viewportOffset,
-      d = document, w = window, documentElement = d.documentElement, timer;
-
-  $.event.special.inview = {
-    add: function(data) {
-      inviewObjects.push({ data: data, $element: $(this), element: this });
-      // Use setInterval in order to also make sure this captures elements within
-      // "overflow:scroll" elements or elements that appeared in the dom tree due to
-      // dom manipulation and reflow
-      // old: $(window).scroll(checkInView);
-      //
-      // By the way, iOS (iPad, iPhone, ...) seems to not execute, or at least delays
-      // intervals while the user scrolls. Therefore the inview event might fire a bit late there
-      //
-      // Don't waste cycles with an interval until we get at least one element that
-      // has bound to the inview event.
-      if (!timer && inviewObjects.length) {
-         timer = setInterval(checkInView, 250);
-      }
-    },
-
-    remove: function(data) {
-      for (var i=0; i<inviewObjects.length; i++) {
-        var inviewObject = inviewObjects[i];
-        if (inviewObject.element === this && inviewObject.data.guid === data.guid) {
-          inviewObjects.splice(i, 1);
-          break;
-        }
-      }
-
-      // Clear interval when we no longer have any elements listening
-      if (!inviewObjects.length) {
-         clearInterval(timer);
-         timer = null;
-      }
-    }
-  };
-
-  function getViewportSize() {
-    var mode, domObject, size = { height: w.innerHeight, width: w.innerWidth };
-
-    // if this is correct then return it. iPad has compat Mode, so will
-    // go into check clientHeight/clientWidth (which has the wrong value).
-    if (!size.height) {
-      mode = d.compatMode;
-      if (mode || !$.support.boxModel) { // IE, Gecko
-        domObject = mode === 'CSS1Compat' ?
-          documentElement : // Standards
-          d.body; // Quirks
-        size = {
-          height: domObject.clientHeight,
-          width:  domObject.clientWidth
-        };
-      }
-    }
-
-    return size;
-  }
-
-  function getViewportOffset() {
-    return {
-      top:  w.pageYOffset || documentElement.scrollTop   || d.body.scrollTop,
-      left: w.pageXOffset || documentElement.scrollLeft  || d.body.scrollLeft
-    };
-  }
-
-  function checkInView() {
-    if (!inviewObjects.length) {
-      return;
-    }
-
-    var i = 0, $elements = $.map(inviewObjects, function(inviewObject) {
-      var selector  = inviewObject.data.selector,
-          $element  = inviewObject.$element;
-      return selector ? $element.find(selector) : $element;
-    });
-
-    viewportSize   = viewportSize   || getViewportSize();
-    viewportOffset = viewportOffset || getViewportOffset();
-
-    for (; i<inviewObjects.length; i++) {
-      // Ignore elements that are not in the DOM tree
-      if (!$.contains(documentElement, $elements[i][0])) {
-        continue;
-      }
-
-      var $element      = $($elements[i]),
-          elementSize   = { height: $element[0].offsetHeight, width: $element[0].offsetWidth },
-          elementOffset = $element.offset(),
-          inView        = $element.data('inview');
-
-      // Don't ask me why because I haven't figured out yet:
-      // viewportOffset and viewportSize are sometimes suddenly null in Firefox 5.
-      // Even though it sounds weird:
-      // It seems that the execution of this function is interferred by the onresize/onscroll event
-      // where viewportOffset and viewportSize are unset
-      if (!viewportOffset || !viewportSize) {
-        return;
-      }
-
-      if (elementOffset.top + elementSize.height > viewportOffset.top &&
-          elementOffset.top < viewportOffset.top + viewportSize.height &&
-          elementOffset.left + elementSize.width > viewportOffset.left &&
-          elementOffset.left < viewportOffset.left + viewportSize.width) {
-        if (!inView) {
-          $element.data('inview', true).trigger('inview', [true]);
-        }
-      } else if (inView) {
-        $element.data('inview', false).trigger('inview', [false]);
-      }
-    }
-  }
-
-  $(w).on("scroll resize scrollstop", function() {
-    viewportSize = viewportOffset = null;
-  });
-
-  // IE < 9 scrolls to focused elements without firing the "scroll" event
-  if (!documentElement.addEventListener && documentElement.attachEvent) {
-    documentElement.attachEvent("onfocusin", function() {
-      viewportOffset = null;
-    });
-  }
-}));
 $(function(){
-    var activeSkill = false;
-    var wScroll = $(window).scrollTop();
     //fade in website
     $('body').removeClass('fade-out');
     // hamburger meny
@@ -10371,40 +10227,16 @@ $(function(){
         $('.main-nav').toggleClass('is-open');
         $('.hamburger').toggleClass('is-open');
     });
-/*
-    $(window).on('scroll',function(){
-        var wScroll = $(window).scrollTop();
-        console.log('blubblub');
-        
-        //if window height goes over 50% of section run following things
-        if($('.skill-bar-chart').offset().top - $(window).height()/1.2 < wScroll){
-            console.log('active skill go');
-            activateSkill();
-            $(window).off('scroll', callOnce);
-        }
-      
-});
-*/
+
 
     //window scroll function
-    $(window).scroll(function(){
+/*    $(window).scroll(function(){
         var wScroll = $(window).scrollTop();
-      //parallax();
-      //toggleSkill();
-      //startPortfolio(wScroll);
-      //console.log('blubblub');
-      scrollTrigger(wScroll, $('.skill-description'), 1.2, 'fadeInLeft');
 
-    });
 
-    /*
-    $('.items').on('inview', function(event, isInView) {
-        if (isInView) {
-            $(this).addClass('fadeInLeft');
-        } else {
-            $(this).removeClass('fadeInLeft');
-        }
     });*/
+
+
 });
 
 
@@ -10417,89 +10249,9 @@ function parallax(scrollTop){
     $('.parallax--bg').css('background-position', 'center '+(wScroll*0.6)+'px');
     $('.parallax--box').css('top', (wScroll*0.005)+'em');
 };
-/* ===========================================================================================*/
-/* ===========================================================================================*/
-function startPortfolio(scrollTop){
-    var wScroll = scrollTop;
-    if($('.portfolio').offset().top - $(window).height()/3 < wScroll){
-        $('.port-item').each(function(i){
-            setTimeout(function(){
-                $('.port-item').eq(i).addClass('is-visible');
-        },100*i);
-        });
-    }   
-}
-/* ===========================================================================================*/
-/* ===========================================================================================*/
-// animate skill section
-function activateSkill(){
-    //add classes 
-    $('.skill-percent').addClass('levelpercent visible');
-    $('.skill-cap').addClass('levelup');
-    //for each skill-percent do the following
-    $('.skill-percent').each(function () {
-        //create property counter and set it to 0
-            $(this).prop('Counter', 0).animate({
-                //add property 0 to skill-percent
-                Counter: $(this).text()
-            }, {
-                //animation options
-                duration: 1000,
-                easing: 'swing',
-                step: function (now) {
-                    //add each number percent to skill-percent making count effect
-                    $(this).text(Math.ceil(now)+'%');
-                }
-            });
-    });
-};
-/* ===========================================================================================*/
-/* ===========================================================================================*/
-//scrollTrigger for animations on scroll. PARAMETERS: wScroll ,classname, offset(1-2), animation name
-function scrollTrigger(scrollTop, element, offset, animation){
-    var wScroll = scrollTop;
-    //take element top and add elements height of the element
-    var elementBottom = element.position().top + element.outerHeight(true);
-    //take window top and add window height
-    var windowBottom = $(window).scrollTop() + $(window).height();
-    console.log(windowBottom);
-    //console.log(scrollTop)
 
-    //check if scrolled past element remove class 
-    if(scrollTop > elementBottom){
-        element.removeClass(animation);    
-    }
-    //check if scrolled on element add class
-    else if(element.offset().top - $(window).height()/offset < wScroll){
-        element.addClass(animation);
-    }
-    //check if scrolled above element remove class 
-    else if(element.position().top > windowBottom ){
-        element.removeClass(animation);
-    }
-}
-/* ===========================================================================================*/
-/* ===========================================================================================*/
-//function to toggle skill
-function toggleSkill(scrollTop){
-    var wScroll = scrollTop;
-    //if window height goes over 50% of section run following things
-    if($('.skill-bar-chart').offset().top - $(window).height()/1.2 < wScroll && activeSkill === false){
-        activeSkill = true;
-        console.log('active skill go');
-        activateSkill();
-    }
-}
-/* ===========================================================================================*/
-/* ===========================================================================================*/
-function callOnce(){
-    //if window height goes over 50% of section run following things
-    if($('.skill-bar-chart').offset().top - $(window).height()/1.2 < wScroll){
-        console.log('active skill go');
-        activateSkill();
-        $(window).off('scroll', callOnce);
-    }
-}
+
+
 
 
 

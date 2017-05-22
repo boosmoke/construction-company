@@ -1,2 +1,18 @@
 /* HERO
 ===============*/
+.home-hero{
+    background: url(../img/1-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    height:100vh;
+}
+.no-flexbox .home-hero{
+    height:100%;
+}
+.hero-container{
+    padding-top: 35vh;
+}
+.no-flexbox .hero-container{
+    padding-top:15em;
+}
