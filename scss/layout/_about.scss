@@ -6,4 +6,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 400px;
+    .container{
+        display:flex;
+        text-align: left;
+    }
+
+    .about-title-text{
+        h1{
+            margin:.2em 0 0 0;
+        }
+    }
+    .about-info-text{
+        
+    }
 }
