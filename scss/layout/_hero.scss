@@ -5,14 +5,59 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover; 
-    height:100vh;
+    height:72vh;
+
+    .title{
+        letter-spacing: .02em;
+        font-size:5em;
+        color: $yellow-main;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom:0;
+        position:relative;
+        line-height: 1em;
+    }
+    .hero-title-image{
+        max-width:640px;
+    }
+    .slogan{
+        letter-spacing: .05em;
+        font-size:2.25em;
+        color:#fff;
+        font-weight: 300;
+        display:block;
+    }
+}
+
+@media (max-width:60rem ){
+    .home-hero{
+        .title{
+            font-size: 4em;
+        }
+        .hero-title-image{
+            max-width:520px;
+        }
+    }
+
+}
+@media (max-width:37rem ){
+    .home-hero{
+        .title{
+            font-size: 2em;
+        }
+        .hero-title-image{
+            max-width:260px;
+        }
+    }
+
 }
 .no-flexbox .home-hero{
     height:100%;
 }
 .hero-container{
-    padding-top: 35vh;
+    padding-top: 28vh;
 }
 .no-flexbox .hero-container{
     padding-top:15em;
+    padding-bottom: 15em;
 }

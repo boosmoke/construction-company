@@ -116,18 +116,21 @@ footer{
   display:flex;
   align-items: center;
   justify-content: space-between;
+  color: $contact-text;
     .contact-phone{
-
+      font-size:.8em;
     }
     .contact-social{
-
+      i{
+        padding:0 1em;
+      }
     }
 }
 
 .logo{
   position:absolute;
-  color: #fff;
-  top: 10px;
+  color: $yellow-main;
+  top: 0;
   left:0;
   font-size:1.4em;
 } 
@@ -160,6 +163,9 @@ footer{
     //flex: 1 1 auto;
     border-bottom: 1px solid $shadow;
     display: flex;
+    &:hover{
+      color: $hover-blue;
+    }
   }
   a{
     text-decoration: none;
@@ -169,8 +175,10 @@ footer{
     justify-content: center;
     padding: 1rem 1rem 1rem 2rem;
     font-weight: 300;
-    &:hover{
-      background: black;
+    color: #fff;
+    &:hover,
+    &:focus{
+      color: $hover-blue;
     }
   }
 }
@@ -189,7 +197,7 @@ footer{
     display: block;
     width: 2em;
     height: 3px;
-    background: #000;
+    background: #fff;
     transition: transform ease-in-out 250ms;
   }
   .hamburger::before{
@@ -262,12 +270,6 @@ footer{
   text-transform: uppercase;
   padding: .4em .4rem;
   font-size: .9em;
-  color: #fff;
-  &:hover,
-  &:focus{
-    background:none;
-    color: blue;
-  }
 }
 }
 
@@ -280,5 +282,6 @@ footer{
   color: $white;
   text-align: left;
   padding: 5em 0;
+  display:none;
 }
 
