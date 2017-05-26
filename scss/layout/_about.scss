@@ -1,11 +1,9 @@
 .about-section{
-    padding: 12.5em 0;
-    background: pink;
+    padding: 10.5em 0;
     background-image: url(../img/about.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 400px;
     .container{
         display:flex;
         text-align: left;
@@ -14,9 +12,55 @@
     .about-title-text{
         h1{
             margin:.2em 0 0 0;
+            font-size: 3em;
+            font-weight: 900;
+        }
+        .slogan{
+            font-weight: 300;
+            font-size:1.3em;
+            color: $gray-text;
         }
     }
     .about-info-text{
-        
+        p{
+            padding-top:.9em;
+            color:$gray-text;
+            font-size: 1.2em;
+        }
     }
+    .button{
+        margin-top:2em;
+        font-size:1em;
+        padding: 1em 1.5em;
+        border-radius: 5px;
+        border-style: none;
+        background: $yellow-main;
+        font-weight: 900;
+        &:hover, :focus{
+            background: #000;
+            color: $yellow-main;
+        }
+    }
+}
+@media (max-width:62rem ){
+    .about-section{
+        .container{
+            flex-direction: column;
+        }
+        .about-title-text, .about-info-text{
+            width:100%;
+        }
+    }
+
+}
+
+.no-flexbox .about-section{
+    .container > div{
+        display:inline-block;
+    }
+    .about-info-text{
+        float:right;
+    }
+    
+
 }

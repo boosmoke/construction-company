@@ -32,6 +32,11 @@ img{
   padding: 0 1.3125rem;
   margin: 0 auto;
 }
+.container-full-width{
+  width:100%;
+  margin: 0 auto;
+  overflow:hidden;
+}
 
 section{
   @extend clearfix;
@@ -40,6 +45,14 @@ section{
 
 footer{
   @extend clearfix;
+}
+
+.underliner{
+  width:63px;
+  text-indent: -9999px;
+  height:2px;
+  background-color: $yellow-main;
+  margin-top: 1.5em;
 }
 
  /* Column system
@@ -82,7 +95,7 @@ footer{
   }
 
   .col-3{
-    width:50%;
+    width:calc(100%/3);
   }
 
   .col-1{
