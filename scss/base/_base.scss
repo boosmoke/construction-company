@@ -129,13 +129,13 @@ footer{
   }
 }
 .contact-container{
-  padding: 1.2em 2em;
+  padding: .8em 2em 1em;
   display:flex;
   align-items: center;
   justify-content: space-between;
   color: $contact-text;
     .contact-phone{
-      font-size:.8em;
+      font-size:.75em;
     }
     .contact-social{
       i{

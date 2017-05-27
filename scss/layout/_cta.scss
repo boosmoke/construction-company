@@ -1,0 +1,51 @@
+.cta-section{
+    background: $cta-section;
+    margin-bottom: 400px;
+    display:flex;
+
+    .cta-content-testimonial{
+        
+        
+        
+    }
+    &>div{
+        padding: 12em 0;
+    }
+    .cta-contact{
+        background: #fff;
+    }
+    .testimonial-container{
+        //margin-top: -3em;
+    }
+    .testimonial-title{
+        color: $yellow-main;
+        text-transform: uppercase;
+        font-weight: 900;
+        padding: .2em 0;
+    }
+    .testimonial-company{
+        color: #b4b4b4;
+        font-size: .8em;
+    }
+    .testimonial-text{
+        padding: 1em 5.625em;
+        position:relative;
+        &::before{
+            content: "\f10e";
+            font-family: FontAwesome;
+            position: absolute;
+            font-size:8em;
+            color:$gray-text;
+            bottom: -120px;
+            right:0;
+            left:0;   
+        }
+        
+        p{
+            color: #fff;
+            font-size: 1.5em;
+            
+        }
+        
+    }
+}
