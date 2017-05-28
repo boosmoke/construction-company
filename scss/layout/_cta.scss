@@ -1,6 +1,5 @@
 .cta-section{
     background: $cta-section;
-    margin-bottom: 400px;
     display:flex;
 
     .cta-content-testimonial{
@@ -14,6 +13,21 @@
     .cta-contact{
         background: #fff;
     }
+    .button{
+        margin-top:2em;
+        font-size:1.5em;
+        padding: 1em 1.5em;
+        border-radius: 5px;
+        border-style: none;
+        background: $yellow-main;
+        font-weight: 900;
+        
+        &:hover, :focus{
+            background: #000;
+            color: $yellow-main;
+        }
+    }
+    
     .testimonial-container{
         //margin-top: -3em;
     }
@@ -48,4 +62,46 @@
         }
         
     }
+    
+}
+
+@media (max-width:60rem ){
+
+    .cta-section{
+        flex-direction: column;
+        .col-6{
+            width:100%;
+        }
+    }
+
+}
+
+.cta-action-section{
+    background:$yellow-main url(../img/ctabg.png)no-repeat center;
+    background-size: cover;
+    padding: 4em 0;
+    margin-bottom: 400px!important;
+    .container{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        .cta-action-text{
+            display:inline-block;
+            width:70%;
+            padding:0 5em 0 0;
+            p{
+                text-align: left;
+                font-size: 1.6em;
+                letter-spacing: 3px;
+                font-weight: 300;
+                line-height: 1.4;
+            }
+        }
+        .cta-action-button{
+            
+            
+        }
+    }
+    
+        
 }
