@@ -3772,7 +3772,12 @@ footer {
 }
 
 .cta-section .cta-contact {
-  background: #fff;
+  background: #b4b4b4 url(../img/ctabg.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
 }
 
 .cta-section .button {
@@ -3790,6 +3795,15 @@ footer {
 .cta-section .button:hover, .cta-section .button :focus {
   background: #000;
   color: #fbcf00;
+}
+
+.cta-section .cta-text {
+  padding: 0 5.625em;
+  font-weight: 900;
+}
+
+.cta-section .cta-text p {
+  font-size: 1.5em;
 }
 
 .cta-section .testimonial-title {
@@ -3840,13 +3854,33 @@ footer {
   }
 }
 
+@media (max-width: 37rem) {
+  .cta-section > div {
+    padding: 8em 0 12em;
+  }
+  .cta-section .cta-content-testimonial {
+    padding: 8em 0 12em;
+    font-size: .8em;
+  }
+  .cta-section .testimonial-text {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .cta-section .cta-text {
+    padding: 0 1em;
+    font-weight: 900;
+  }
+  .cta-section .button {
+    font-size: 1em;
+  }
+}
+
 .cta-action-section {
   background: #fbcf00 url(../img/ctabg.png) no-repeat center;
   -moz-background-size: cover;
     -o-background-size: cover;
        background-size: cover;
   padding: 4em 0;
-  margin-bottom: 400px !important;
 }
 
 .cta-action-section .container {
@@ -3879,4 +3913,29 @@ footer {
   letter-spacing: 3px;
   font-weight: 300;
   line-height: 1.4;
+}
+
+.contact-section {
+  background: pink;
+  padding: 12em 0;
+  margin-bottom: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-section p {
+  padding: 0;
+  margin: 0;
+}
+
+.contact-section form .name-input:after {
+  position: absolute;
+  font-family: FontAwesome;
+  content: '';
+  color: #b6b6c9;
+  top: 7px;
+  right: 12px;
 }

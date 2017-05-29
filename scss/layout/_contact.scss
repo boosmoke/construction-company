@@ -1,0 +1,24 @@
+.contact-section{
+    background: pink;
+    padding: 12em 0;
+    margin-bottom: 400px;
+    display:flex;
+
+    p{
+        padding:0;
+        margin:0;
+    }
+
+    form{
+        .name-input{
+            &:after{
+                position:absolute;
+                font-family:FontAwesome;
+                content:'';
+                color: #b6b6c9;
+                top:7px;
+                right:12px;
+            }
+        }
+    }
+}
