@@ -17,23 +17,13 @@ p:last-of-type{
   font-style: normal;
   text-rendering: optimizeLegibility;
   font-size: 3.125rem;
-  letter-spacing: 5px;
-  font-weight: 400;
+  letter-spacing: 3px;
+  font-weight: 900;
   line-height: 1.3em;
+  color: $title-color;
 }
 
-.title-secondary{
-  //background: url(../img/bottom-line.png) center bottom no-repeat;
-  margin:0;
-  letter-spacing: 5px;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  padding-bottom: 30px;
-  padding-top: 0.667em;
-  margin-bottom: 60px;
-}
+
 
 .title span{
   font-weight: 300;
