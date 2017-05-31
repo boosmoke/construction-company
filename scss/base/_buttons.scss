@@ -13,6 +13,10 @@
   border-color: black;
   color: black;
   font-weight: 400;
+  &:hover, :focus{
+      background: #000;
+      color: $yellow-main;
+  }
 }
 @media (min-width:60rem ){
   .button{

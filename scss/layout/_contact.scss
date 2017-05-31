@@ -4,7 +4,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 6em 0;
-    
     display:flex;
     text-align: left;
     font-weight: 900;
@@ -34,6 +33,10 @@
             text-transform: uppercase;
             width:100%;
             border-radius: 5px;
+            &:hover, :focus{
+                background: #000;
+                color: $yellow-main;
+            }
             
         }
         .input-name, .input-email{
@@ -62,6 +65,8 @@
             font-size: 2.8em;
             margin: .6em 0;
             color: #fbc300;
+            display: block;
+            text-decoration: none;
         }
         .title{
             padding:0;
@@ -77,3 +82,36 @@
         }
     }
 }
+
+.no-flexbox .contact-section{
+    display:block;
+    .container{
+        @extend .clearfix;
+    }
+    .col-6{
+        
+    }
+}
+@media (max-width:45rem ){
+
+    .contact-section{
+        font-size:15px;
+        .contact-info{
+            .telephone{
+                font-size: 2.5em;
+            }
+        }
+        width:100%;
+        .col-6{
+            width:100%;
+        }
+    }
+    .no-flexbox .contact-section{
+        display:block;
+        .col-6{
+            float:none;
+        }
+    }
+
+}
+

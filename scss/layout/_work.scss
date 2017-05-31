@@ -7,7 +7,7 @@
         width:100%;
         max-width: initial;
         display:flex;
-        @extend clearfix;
+        @extend .clearfix;
     }
 
     .work-item{

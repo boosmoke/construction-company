@@ -35,9 +35,8 @@
         border-style: none;
         background: $yellow-main;
         font-weight: 900;
-        &:hover, :focus{
-            background: #000;
-            color: $yellow-main;
+        &:hover{
+            background:#000;
         }
     }
 }

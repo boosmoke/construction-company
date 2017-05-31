@@ -39,12 +39,12 @@ img{
 }
 
 section{
-  @extend clearfix;
+  @extend .clearfix;
   //padding:7.5rem 0;
 }
 
 footer{
-  @extend clearfix;
+  @extend .clearfix;
 }
 
 .underliner{
@@ -96,6 +96,9 @@ footer{
 
   .col-3{
     width:calc(100%/3);
+  }
+  .col-4{
+    width:calc(100%/4);
   }
 
   .col-1{
@@ -180,9 +183,6 @@ footer{
     //flex: 1 1 auto;
     border-bottom: 1px solid $shadow;
     display: flex;
-    &:hover{
-      color: $hover-blue;
-    }
   }
   a{
     text-decoration: none;
@@ -296,10 +296,51 @@ footer{
 ===============*/
 
 footer{
-  color: $white;
-  text-align: left;
-  padding: 5em 0;
-  display:flex;
   background: #1A1A1A;
+  padding: 8em 0 0;
+  color: $gray-text;
+  .container{
+    text-align: left;
+    display:flex;
+  }
+  h2{
+    color:#fff;
+  }
+  p{
+    font-size:.9em;
+    
+  }
+  .col-4{
+    //background: pink;
+    padding: 0 2em 5em;
+    h2{
+      position:relative;
+      display: inline-block;
+      &::after{
+        position:absolute;
+        content:"\f0d7";
+        font-family: FontAwesome;
+        color: $yellow-main;
+        right:-20px;
+        top: 5px;
+      }
+    } 
+  }
+  .copyright{
+    background: #2C2C2C;
+    padding: 2.2em 0;
+    p{
+      margin: .2em;
+    }
+  }
 }
-
+@media (min-width:60rem ){
+  footer{
+    .col-4{
+      //width: calc(100%/2);
+    }
+  }
+}
+.no-flexbox footer{
+  display: block;
+}
