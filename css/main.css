@@ -3811,6 +3811,7 @@ footer .copyright p {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .cta-section > div {

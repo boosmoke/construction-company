@@ -6,6 +6,9 @@ $(function(){
         $('.main-nav').toggleClass('is-open');
         $('.hamburger').toggleClass('is-open');
     });
+sr.reveal({reset: true});
+sr.reveal('.cta-content-testimonial', {duration: 2000, delay: 100, origin: 'left', distance: '100px'});
+sr.reveal('.cta-contact', {duration: 2000, delay: 100, origin: 'right', distance: '100px'});
 
 
     //window scroll function
@@ -16,9 +19,10 @@ $(function(){
     });*/
 
 
+
 });
 
-
+window.sr = ScrollReveal();
 
 /* ===========================================================================================*/
 /* ===========================================================================================*/
