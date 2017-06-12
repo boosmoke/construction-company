@@ -3575,6 +3575,16 @@ footer .copyright p {
   display: block;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.menu-padding {
+  padding-top: 48px;
+}
+
 /* HERO
 ===============*/
 .home-hero {
