@@ -3824,6 +3824,29 @@ footer .copyright p {
   overflow: hidden;
 }
 
+.cta-section .testimonial-section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.cta-section .button-testimonial {
+  color: #fbcf00;
+  font-size: 50px;
+  position: absolute;
+  z-index: 2;
+}
+
+.cta-section .button-testimonial.next-testimonial {
+  top: 50%;
+  right: 5%;
+}
+
+.cta-section .button-testimonial.prev-testimonial {
+  top: 50%;
+  left: 5%;
+}
+
 .cta-section > div {
   padding: 12em 0;
 }
@@ -3861,6 +3884,25 @@ footer .copyright p {
 
 .cta-section .cta-text p {
   font-size: 1.5em;
+}
+
+.cta-section .testimonial-slideshow-container {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+
+.cta-section .testimonial-slideshow-container .active-testimonial {
+  display: block;
+}
+
+.cta-section .testimonial-container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
 .cta-section .testimonial-title {
