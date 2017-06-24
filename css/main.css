@@ -3097,7 +3097,7 @@
   clip: auto;
 }
 
-.clearfix:after, section:after, footer:after, .work-section .container-full-width:after, .no-flexbox .contact-section .container:after {
+.clearfix:after, section:after, footer:after, .no-flexbox .contact-header:after, footer .container:after, .work-section .container-full-width:after, .no-flexbox .contact-section .container:after {
   content: "";
   display: table;
   clear: both;
@@ -3287,6 +3287,18 @@ img {
 
 .contact-header {
   background: rgba(0, 0, 0, 0.6);
+}
+
+.no-flexbox .contact-header {
+  padding-bottom: .5em;
+}
+
+.no-flexbox .contact-header .contact-phone {
+  float: left;
+}
+
+.no-flexbox .contact-header .contact-social {
+  float: right;
 }
 
 @media (max-width: 50rem) {
@@ -3571,6 +3583,25 @@ footer .copyright p {
   margin: .2em;
 }
 
+@media (max-width: 60rem) {
+  footer .container {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  footer .container .col-4:first-of-type {
+    width: 100%;
+  }
+  footer .container .col-4 {
+    width: -webkit-calc(100%/3);
+    width: -moz-calc(100%/3);
+    width: calc(100%/3);
+  }
+  footer .container .col-4 li {
+    font-size: .8em;
+  }
+}
+
 .no-flexbox footer {
   display: block;
 }
@@ -3848,7 +3879,7 @@ footer .copyright p {
 }
 
 .cta-section > div {
-  padding: 12em 0;
+  padding: 8em 0 6em;
 }
 
 .cta-section .cta-contact {
@@ -3898,10 +3929,7 @@ footer .copyright p {
 }
 
 .cta-section .testimonial-container {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  min-height: 340px;
   display: none;
 }
 
@@ -3948,22 +3976,29 @@ footer .copyright p {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .cta-section > div {
+    margin: 0;
+    padding: 4em 0 4em;
+  }
   .cta-section .col-6 {
     width: 100%;
+  }
+  .cta-section .testimonial-text {
+    font-size: .8em;
+    padding: 1em 5em 0em;
   }
 }
 
 @media (max-width: 37rem) {
-  .cta-section > div {
-    padding: 8em 0 12em;
-  }
-  .cta-section .cta-content-testimonial {
-    padding: 8em 0 12em;
-    font-size: .8em;
+  .cta-section .testimonial-container {
+    min-height: initial;
   }
   .cta-section .testimonial-text {
-    padding-left: 1em;
-    padding-right: 1em;
+    font-size: .6em;
+    padding: 2em 4em 0em;
+  }
+  .cta-section .testimonial-text::before {
+    top: 10%;
   }
   .cta-section .cta-text {
     padding: 0 1em;
@@ -4029,6 +4064,10 @@ footer .copyright p {
 
 .no-flexbox .cta-section .col-6 {
   float: left;
+}
+
+.no-flexbox .cta-content-testimonial {
+  max-height: 500px;
 }
 
 .contact-section {

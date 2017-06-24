@@ -29,7 +29,7 @@
         
     
     &>div{
-        padding: 12em 0;
+        padding: 8em 0 6em;
     }
     .cta-contact{
         background: #fff url(../img/ctabg.png);
@@ -60,6 +60,7 @@
         
     }
     .testimonial-slideshow-container{
+        
         height:100%;
         width:100%;
         padding:0;
@@ -70,10 +71,7 @@
     }
     .testimonial-container{
         //margin-top: -3em;
-        height:100%;
-        position:absolute;
-        top:0;
-        left:0;
+        min-height:340px;
         display:none;
     }
 
@@ -115,8 +113,17 @@
 
     .cta-section{
         flex-direction: column;
+        &>div{
+            margin: 0;
+            padding: 4em 0 4em;
+        }
         .col-6{
             width:100%;
+        }
+
+        .testimonial-text{
+            font-size: .8em;
+            padding: 1em 5em 0em;
         }
     }
 
@@ -124,19 +131,16 @@
 @media (max-width:37rem ){
     
 .cta-section{
-    &>div{
-        padding: 8em 0 12em;
-    }
-    
-    
-    .cta-content-testimonial{
-        padding: 8em 0 12em;
-        font-size: .8em;
-        
-    }
+    .testimonial-container{
+        min-height: initial;
+    }    
     .testimonial-text{
-        padding-left:1em;
-        padding-right:1em;
+        font-size: .6em;
+        padding: 2em 4em 0em;
+        &::before{
+            top:10%;    
+        }
+        
     }
     .cta-text{
         padding: 0 1em;
@@ -198,4 +202,7 @@
     .col-6{
         float:left;
     }
+}
+.no-flexbox .cta-content-testimonial{
+    max-height:500px;
 }

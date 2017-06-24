@@ -126,6 +126,17 @@ footer{
 .contact-header{
   background: rgba(0,0,0, .6);
 }
+.no-flexbox .contact-header{
+  @extend .clearfix;
+  padding-bottom: .5em;
+}
+.no-flexbox .contact-header .contact-phone{
+  float:left;
+  
+}
+.no-flexbox .contact-header .contact-social{
+  float:right;
+}
 @media (max-width:50rem ){
   .contact-header{
     display:none;
@@ -302,6 +313,7 @@ footer{
   .container{
     text-align: left;
     display:flex;
+    @extend .clearfix;
   }
   h2{
     color:#fff;
@@ -326,6 +338,8 @@ footer{
       }
     } 
   }
+
+
   .copyright{
     background: #2C2C2C;
     padding: 2.2em 0;
@@ -334,11 +348,22 @@ footer{
     }
   }
 }
-@media (min-width:60rem ){
+@media (max-width:60rem ){
   footer{
-    .col-4{
-      //width: calc(100%/2);
+    .container{
+      flex-wrap: wrap;
+      
+      .col-4:first-of-type{
+        width:100%;
+      }
+      .col-4{
+        width: calc(100%/3);
+        li{
+          font-size:.8em;
+        }
+      }
     }
+    
   }
 }
 .no-flexbox footer{
