@@ -64,7 +64,6 @@ function testimonialSwitch(){
             $('.testimonial-container').removeClass('active-testimonial').first().addClass('active-testimonial');
         }
     }else{
-        console.log(position, testiLength)
         if(position > 0){
             
             $('.active-testimonial').removeClass('active-testimonial').prev().addClass('active-testimonial');

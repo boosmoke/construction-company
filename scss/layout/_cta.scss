@@ -1,10 +1,56 @@
 
-.cta-section{
-    background: $cta-section;
-    display:flex;
-    overflow:hidden;
+#cta {
+    position:relative;
+    .container{
+        padding:0;
+    }
+    &:after{
+        content:' ';
+        position: absolute;
+        display:block;
+        top: 0;
+        left:0;
+        height:100%;
+        width: 50%;
+        background:$cta-section;
+        z-index:-1; 
+    }
     
-
+    &:before{
+        content:' ';
+        position: absolute;
+        display:block;
+        top: 0;
+        right:0;
+        height:100%;
+        width: 50%;
+        background: #fff url(../img/ctabg.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index:-1; 
+    }
+    
+}
+@media (max-width:60rem ){
+        #cta{
+            &:before{
+                width:100%;
+                
+                
+            }
+            &:after{
+                width:100%;
+                height:50%;
+            }
+        }
+        
+    }
+.cta-section{
+    //background: $cta-section;
+    display:flex;
+    overflow:hidden; 
+    
     .testimonial-section{
         position:relative;
         height:100%;
@@ -24,19 +70,19 @@
     }
     .button-testimonial.prev-testimonial{
         top:50%;
-        left:5%;
+        left:0%;
     }
         
     
     &>div{
         padding: 8em 0 6em;
     }
-    .cta-contact{
+    /*.cta-contact{
         background: #fff url(../img/ctabg.png);
         background-position: right;
         background-repeat: no-repeat;
         background-size: cover;
-    }
+    }*/
     .button{
         margin-top:2em;
         font-size:1.5em;
@@ -60,7 +106,6 @@
         
     }
     .testimonial-slideshow-container{
-        
         height:100%;
         width:100%;
         padding:0;
@@ -70,9 +115,10 @@
         }
     }
     .testimonial-container{
-        //margin-top: -3em;
+        margin-right: 2.5em;
         min-height:340px;
         display:none;
+        
     }
 
     .testimonial-title{
@@ -86,8 +132,10 @@
         font-size: .8em;
     }
     .testimonial-text{
-        padding: 1em 5.625em;
+        padding: 1em 4.725em;
         position:relative;
+        
+        
         &::before{
             content: "\f10e";
             font-family: FontAwesome;
@@ -96,10 +144,12 @@
             color:$gray-text;
             bottom: -120px;
             right:0;
-            left:0;   
+            left:0;
+            z-index:1;   
         }
         
         p{
+            z-index: 2;
             color: #fff;
             font-size: 1.5em;
             
@@ -110,7 +160,7 @@
 }
 
 @media (max-width:60rem ){
-
+    
     .cta-section{
         flex-direction: column;
         &>div{
@@ -136,9 +186,9 @@
     }    
     .testimonial-text{
         font-size: .6em;
-        padding: 2em 4em 0em;
+        padding: 2em 8em 0em;
         &::before{
-            top:10%;    
+            display:none;    
         }
         
     }
