@@ -3166,6 +3166,151 @@ p:last-of-type {
   color: #fbcf00;
 }
 
+@-webkit-keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+            transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@-moz-keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    -moz-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+         animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -moz-transform: scale3d(0.3, 0.3, 0.3);
+         transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -moz-transform: scale3d(1.1, 1.1, 1.1);
+         transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -moz-transform: scale3d(0.9, 0.9, 0.9);
+         transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: scale3d(1.03, 1.03, 1.03);
+         transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -moz-transform: scale3d(0.97, 0.97, 0.97);
+         transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    -moz-transform: scale3d(1, 1, 1);
+         transform: scale3d(1, 1, 1);
+  }
+}
+
+@-o-keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    -o-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+       animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+       -moz-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+         -o-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+       -moz-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+       -moz-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+       -moz-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+       -moz-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+       -moz-transform: scale3d(0.97, 0.97, 0.97);
+            transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+       -moz-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+     -moz-animation-name: bounceIn;
+       -o-animation-name: bounceIn;
+          animation-name: bounceIn;
+}
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -3332,15 +3477,21 @@ img {
 }
 
 .contact-container .contact-social i {
-  padding: 0 1em;
+  padding: 0 .3em;
 }
 
 .logo {
   position: absolute;
+  background: pink;
   color: #fbcf00;
   top: 0;
   left: 0;
   font-size: 1.4em;
+}
+
+.logo svg {
+  display: block;
+  fill: #fbcf00;
 }
 
 .main-navigation {
@@ -3556,16 +3707,16 @@ footer p {
   font-size: .9em;
 }
 
-footer .col-4 {
+footer .col-4:not(:first-of-type) {
   padding: 0 2em 5em;
 }
 
-footer .col-4 h2 {
+footer .col-4:not(:first-of-type) h2 {
   position: relative;
   display: inline-block;
 }
 
-footer .col-4 h2::after {
+footer .col-4:not(:first-of-type) h2::after {
   position: absolute;
   content: "\f0d7";
   font-family: FontAwesome;
@@ -3610,6 +3761,19 @@ footer .copyright p {
   position: fixed;
   top: 0;
   z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.sticky .main-nav a {
+  color: #1A1A1A;
+}
+
+.sticky .contact-header {
+  display: none;
+}
+
+.sticky .main-nav li.active {
+  border: 2px solid #1A1A1A;
 }
 
 .menu-padding {
@@ -3914,24 +4078,29 @@ footer .copyright p {
 }
 
 .cta-section .button-testimonial {
-  color: #fbcf00;
-  font-size: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: block;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
   position: absolute;
   z-index: 2;
 }
 
 .cta-section .button-testimonial.next-testimonial {
-  top: 50%;
-  right: 5%;
+  top: 40%;
+  right: 0%;
 }
 
 .cta-section .button-testimonial.prev-testimonial {
-  top: 50%;
+  top: 40%;
   left: 0%;
 }
 
 .cta-section > div {
-  padding: 8em 0 6em;
+  padding: 8em 0 3em;
 }
 
 .cta-section .button {
@@ -3975,6 +4144,10 @@ footer .copyright p {
   margin-right: 2.5em;
   min-height: 340px;
   display: none;
+  -webkit-animation: bounceIn 800ms ease-in-out;
+     -moz-animation: bounceIn 800ms ease-in-out;
+       -o-animation: bounceIn 800ms ease-in-out;
+          animation: bounceIn 800ms ease-in-out;
 }
 
 .cta-section .testimonial-title {
@@ -3994,22 +4167,21 @@ footer .copyright p {
   position: relative;
 }
 
-.cta-section .testimonial-text::before {
+.cta-section .testimonial-text::after {
   content: "\f10e";
   font-family: FontAwesome;
   position: absolute;
-  font-size: 8em;
+  font-size: 4em;
   color: #737373;
-  bottom: -120px;
+  bottom: -50px;
   right: 0;
   left: 0;
-  z-index: 1;
 }
 
 .cta-section .testimonial-text p {
-  z-index: 2;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-weight: 300;
 }
 
 @media (max-width: 60rem) {

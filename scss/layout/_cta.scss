@@ -58,24 +58,29 @@
     }
     
     .button-testimonial{
-        color: $yellow-main;
-        font-size: 50px;
+        background: rgba(#fff, .2);
+        color: #fff;
+        display:block;
+        cursor: pointer;
+        width:35px;
+        height:35px;
+        font-size: 25px;
         position:absolute;
         z-index:2;
         
     }
     .button-testimonial.next-testimonial{
-        top:50%;
-        right:5%;
+        top:40%;
+        right:0%;
     }
     .button-testimonial.prev-testimonial{
-        top:50%;
+        top:40%;
         left:0%;
     }
         
     
     &>div{
-        padding: 8em 0 6em;
+        padding: 8em 0 3em;
     }
     /*.cta-contact{
         background: #fff url(../img/ctabg.png);
@@ -118,6 +123,7 @@
         margin-right: 2.5em;
         min-height:340px;
         display:none;
+        animation: bounceIn 800ms ease-in-out;
         
     }
 
@@ -136,23 +142,21 @@
         position:relative;
         
         
-        &::before{
+        &::after{
             content: "\f10e";
             font-family: FontAwesome;
             position: absolute;
-            font-size:8em;
+            font-size:4em;
             color:$gray-text;
-            bottom: -120px;
+            bottom: -50px;
             right:0;
             left:0;
-            z-index:1;   
         }
         
         p{
-            z-index: 2;
             color: #fff;
-            font-size: 1.5em;
-            
+            font-size: 1.2em;
+            font-weight: 300;
         }
         
     }

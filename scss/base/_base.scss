@@ -153,17 +153,24 @@ footer{
     }
     .contact-social{
       i{
-        padding:0 1em;
+        padding:0 .3em;
       }
     }
 }
 
 .logo{
   position:absolute;
+  background: pink;
   color: $yellow-main;
   top: 0;
   left:0;
   font-size:1.4em;
+  svg{
+    
+    display:block;
+    
+    fill: $yellow-main;
+  }
 } 
 .main-navigation{
   position: relative;
@@ -322,7 +329,7 @@ footer{
     font-size:.9em;
     
   }
-  .col-4{
+  .col-4:not(:first-of-type){
     //background: pink;
     padding: 0 2em 5em;
     h2{
@@ -375,6 +382,18 @@ footer{
     position:fixed;
     top:0;
     z-index:100;
+    background:rgba(white, .9);
+    .main-nav a{
+      color: #1A1A1A;
+    }
+    .contact-header{
+      display:none;
+    }
+    .main-nav li{
+      &.active{
+        border: 2px solid #1A1A1A;
+      }
+    }
     
 }
 
