@@ -3482,15 +3482,13 @@ img {
 
 .logo {
   position: absolute;
-  background: pink;
-  color: #fbcf00;
   top: 0;
   left: 0;
-  font-size: 1.4em;
+  padding: 5px 0;
 }
 
-.logo svg {
-  display: block;
+.logo img {
+  height: 55px;
   fill: #fbcf00;
 }
 

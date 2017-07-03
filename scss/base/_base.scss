@@ -157,21 +157,17 @@ footer{
       }
     }
 }
-
 .logo{
   position:absolute;
-  background: pink;
-  color: $yellow-main;
-  top: 0;
+  top:0;
   left:0;
-  font-size:1.4em;
-  svg{
-    
-    display:block;
-    
+  padding: 5px 0;
+  img{
+    height:55px;
     fill: $yellow-main;
   }
-} 
+}
+
 .main-navigation{
   position: relative;
 }

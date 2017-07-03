@@ -2,29 +2,29 @@ $(function(){
     //fade in website
     $('body').removeClass('fade-out');
     // hamburger meny
-    $('.nav-toggle').click(function(){
-        $('.main-nav').toggleClass('is-open');
-        $('.hamburger').toggleClass('is-open');
-    });
-/*sr.reveal({reset: true});
-sr.reveal('.cta-content-testimonial', {duration: 2000, delay: 100, origin: 'left', distance: '100px'});
-sr.reveal('.cta-contact', {duration: 2000, delay: 100, origin: 'right', distance: '100px'});
-*/
-
-    //window scroll function
-/*    $(window).scroll(function(){
-        var wScroll = $(window).scrollTop();
+    $('.nav-toggle').click(mobileMenuToggle);
 
 
-    });*/
+    document.onscroll = stickyMenu;
 
-document.onscroll = stickyMenu;
-
-$('.button-testimonial').on('click', testimonialSwitch);
+    $('.button-testimonial').on('click', testimonialSwitch);
 
 });
 
-window.sr = ScrollReveal();
+
+
+//smooth scroll
+
+$('.main-nav a').on('click', smoothScroll);
+
+function smoothScroll(e) {
+  
+  e.preventDefault();
+  $('body,html').animate({
+    scrollTop: $(this.hash).offset().top
+  }, 1000 );
+}
+
 
 /* ===========================================================================================*/
 /* ===========================================================================================*/
@@ -32,28 +32,20 @@ window.sr = ScrollReveal();
 function parallax(scrollTop){
     var wScroll = scrollTop;
     $('.parallax--bg').css('background-position', 'center '+(wScroll*0.6)+'px');
-    $('.parallax--box').css('top', (wScroll*0.005)+'em');
 };
 
-
-
-var menu = $('.main-header');
-//var origOffsetY = menu.offset().top+200;
-var origOffsetY = menu.outerHeight();
+//Sticky menu
 function stickyMenu(){
-    //console.log(origOffsetY);
-    //console.log($(window).scrollTop());
+    var menu = $('.main-header');
+    var origOffsetY = menu.outerHeight();
     if ($(window).scrollTop() >= origOffsetY) {
         $('.main-header').addClass('sticky');
-        //$('.content').addClass('menu-padding');
     } else {
         $('.main-header').removeClass('sticky');
-        //$('.content').removeClass('menu-padding');
     }
 }
-
+//testimonialSwitch between customers
 function testimonialSwitch(){
-    
     var currentActive = $('.testimonial-slideshow-container').find('.active-testimonial');
     var position = $('.testimonial-slideshow-container').children().index(currentActive);
     var testiLength = $('.testimonial-container').length;
@@ -70,15 +62,15 @@ function testimonialSwitch(){
         }else{
             $('.testimonial-container').removeClass('active-testimonial').last().addClass('active-testimonial');
         }
-    }
-    
-    
-    
-    
+    } 
 }
 
-
-
+// mobile menu toggle
+function mobileMenuToggle(){
+   $('.main-nav').toggleClass('is-open');
+   $('.hamburger').toggleClass('is-open');
+   return false;
+}
 
 
 
