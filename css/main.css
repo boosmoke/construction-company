@@ -3315,10 +3315,6 @@ p:last-of-type {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all ease-in-out .25s;
-  -o-transition: all ease-in-out .25s;
-  -moz-transition: all ease-in-out .25s;
-  transition: all ease-in-out .25s;
 }
 
 body {
@@ -3432,6 +3428,26 @@ img {
 
 .contact-header {
   background: rgba(0, 0, 0, 0.6);
+}
+
+.contact-social .fa-facebook:hover {
+  color: #3B5998;
+}
+
+.contact-social .fa-linkedin:hover {
+  color: #0077B5;
+}
+
+.contact-social .fa-twitter:hover {
+  color: #1DA1F2;
+}
+
+.contact-social .fa-instagram:hover {
+  color: #885A4D;
+}
+
+.contact-social .fa-google-plus:hover {
+  color: #EB3D01;
 }
 
 .no-flexbox .contact-header {
@@ -3568,7 +3584,7 @@ img {
   color: #fff;
 }
 
-.main-nav a:hover, .main-nav a:focus {
+.main-nav a:hover {
   color: #00bcd4;
 }
 
@@ -3665,6 +3681,9 @@ img {
   }
   .main-nav li.active {
     border: 2px solid #fff;
+  }
+  .main-nav li.active a {
+    color: #00bcd4;
   }
   .main-nav li:last-of-type {
     margin-right: .3em;

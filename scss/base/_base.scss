@@ -3,7 +3,7 @@
 
 *{
   box-sizing: border-box;
-  transition: all ease-in-out .25s;
+  //transition: all ease-in-out .25s;
 }
 
 body{
@@ -126,6 +126,21 @@ footer{
 .contact-header{
   background: rgba(0,0,0, .6);
 }
+.contact-social .fa-facebook:hover{
+  color: #3B5998;
+}
+.contact-social .fa-linkedin:hover{
+  color: #0077B5;
+}
+.contact-social .fa-twitter:hover{
+  color: #1DA1F2;
+}
+.contact-social .fa-instagram:hover{
+  color: #885A4D;
+}
+.contact-social .fa-google-plus:hover{
+  color: #EB3D01;
+}
 .no-flexbox .contact-header{
   @extend .clearfix;
   padding-bottom: .5em;
@@ -207,8 +222,7 @@ footer{
     padding: 1rem 1rem 1rem 2rem;
     font-weight: 300;
     color: #fff;
-    &:hover,
-    &:focus{
+    &:hover{
       color: $hover-blue;
     }
   }
@@ -287,6 +301,9 @@ footer{
   border-bottom: none;
   &.active{
     border: 2px solid #fff;
+    a{
+      color: $hover-blue;
+    }
   }
   &:last-of-type{
     margin-right: .3em;
