@@ -3315,6 +3315,10 @@ p:last-of-type {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: all ease-in-out .25s;
+  -o-transition: all ease-in-out .25s;
+  -moz-transition: all ease-in-out .25s;
+  transition: all ease-in-out .25s;
 }
 
 body {
@@ -3678,6 +3682,10 @@ img {
     display: inline-block;
     margin: 1em .5em;
     border-bottom: none;
+    -webkit-transition: initial;
+    -o-transition: initial;
+    -moz-transition: initial;
+    transition: initial;
   }
   .main-nav li.active {
     border: 2px solid #fff;
@@ -3756,17 +3764,33 @@ footer .copyright p {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-  }
-  footer .container .col-4:first-of-type {
-    width: 100%;
+    /*.col-4:first-of-type{
+        width:50%;
+      }*/
   }
   footer .container .col-4 {
-    width: -webkit-calc(100%/3);
-    width: -moz-calc(100%/3);
-    width: calc(100%/3);
+    width: -webkit-calc(100%/2);
+    width: -moz-calc(100%/2);
+    width: calc(100%/2);
   }
   footer .container .col-4 li {
     font-size: .8em;
+  }
+}
+
+@media (max-width: 37rem) {
+  footer {
+    padding-top: 4em;
+  }
+  footer .container .col-4 {
+    width: 100%;
+    padding: 0em 2em 0em;
+  }
+  footer .container .col-4 h2 {
+    margin: .5em 0;
+  }
+  footer .container .col-4 ul {
+    margin: 0 0 1em;
   }
 }
 
@@ -4158,8 +4182,7 @@ footer .copyright p {
 }
 
 .cta-section .testimonial-container {
-  margin-right: 2.5em;
-  min-height: 340px;
+  min-height: 320px;
   display: none;
   -webkit-animation: bounceIn 800ms ease-in-out;
      -moz-animation: bounceIn 800ms ease-in-out;
@@ -4201,6 +4224,16 @@ footer .copyright p {
   font-weight: 300;
 }
 
+@media (max-width: 64rem) {
+  .cta-section > div {
+    padding: 2.5em 0 4em;
+  }
+  .cta-section .testimonial-text {
+    font-size: .9em;
+    padding: 1em 5em 1em;
+  }
+}
+
 @media (max-width: 60rem) {
   .cta-section {
     -webkit-box-orient: vertical;
@@ -4218,29 +4251,18 @@ footer .copyright p {
   .cta-section .col-6 {
     width: 100%;
   }
-  .cta-section .testimonial-text {
-    font-size: .8em;
-    padding: 1em 5em 0em;
-  }
 }
 
 @media (max-width: 37rem) {
-  .cta-section .testimonial-container {
-    min-height: initial;
-  }
   .cta-section .testimonial-text {
-    font-size: .6em;
-    padding: 2em 8em 0em;
+    font-size: .8em;
+    padding: 2em 4em 0em;
   }
   .cta-section .testimonial-text::before {
     display: none;
   }
-  .cta-section .cta-text {
-    padding: 0 1em;
-    font-weight: 900;
-  }
   .cta-section .button {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 
