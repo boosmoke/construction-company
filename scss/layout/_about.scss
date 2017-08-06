@@ -42,11 +42,36 @@
 }
 @media (max-width:62rem ){
     .about-section{
+        padding: 7.5em 0;
         .container{
             flex-direction: column;
         }
         .about-title-text, .about-info-text{
             width:100%;
+        }
+    }
+
+}
+@media (max-width:32rem ){
+
+    .about-section{
+        padding: 5em 0;
+    
+        .about-title-text{
+            h1{
+                font-size: 2em;
+            }
+            .slogan{
+                font-size:1.1em;
+            }
+        }
+        .about-info-text{
+            p{
+                font-size: 1em;
+            }
+        }
+        .button{
+            font-size:1em;
         }
     }
 

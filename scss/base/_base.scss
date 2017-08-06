@@ -186,16 +186,18 @@ footer{
 
 .main-navigation{
   position: relative;
+  width:80%;
 }
 //mobile menu
 .main-nav{
-  background: #999;
+  background: #f4f6f7;
   position: absolute;
-  top: 0;
+  top: 60px;
   right: 0;
   left: 100%;
   font-size: 1.5rem;
   z-index:101;
+  text-align: right;
   transition: all ease-in-out 250ms;
   overflow:hidden;
   text-transform: uppercase;
@@ -207,11 +209,12 @@ footer{
     display:flex;
     flex-direction: column;
     justify-content: space-around;
+    border-top: 1px solid #dfe5e8;
+    border-left: 1px solid #dfe5e8;
+    border-right: 1px solid #dfe5e8;
     //height: 100vh;
   }
   li{
-    //flex: 1 1 auto;
-    border-bottom: 1px solid $shadow;
     display: flex;
   }
   a{
@@ -223,6 +226,7 @@ footer{
     padding: 1rem 1rem 1rem 2rem;
     font-weight: 300;
     color: #fff;
+    text-align: right;
     &:hover{
       color: $hover-blue;
     }
@@ -267,6 +271,9 @@ footer{
 
 
 @media (min-width:60rem ){
+  .main-navigation{
+    width:95%;
+  }
   .nav-toggle{
     display:none;
   }
@@ -281,8 +288,8 @@ footer{
     display: inline-block;
     position: relative;
     width:100%;
-    text-align: right;
     font-size: 1rem;
+    top: 0;
     left:0;
     margin-left: 0;
   }
@@ -357,6 +364,8 @@ footer{
         color: $yellow-main;
         right:-20px;
         top: 5px;
+        font-size:.8em;
+        transform: rotate(45deg);
       }
     } 
   }
@@ -374,10 +383,6 @@ footer{
   footer{
     .container{
       flex-wrap: wrap;
-      
-      /*.col-4:first-of-type{
-        width:50%;
-      }*/
       .col-4{
         width: calc(100%/2);
         li{
@@ -392,16 +397,36 @@ footer{
   footer{
     padding-top: 4em;
   }
-  footer .container .col-4{
-    width:100%;
-    padding: 0em 2em 0em;
-    h2{
-      margin: .5em 0;
+  
+  footer{
+    .container{
+      .col-4{
+        width:calc(100%/3);
+        padding: 0;
+        h2{
+          margin: 0;
+          font-size:1.3em;
+          &::after{
+            right:20px;
+            top: 0px;
+          }
+        }
+        ul{
+          margin: 0 0 1em;
+          padding: .5em 1em;
+        }
+      }
     }
-    ul{
-      margin: 0 0 1em;
+    .container{
+      .col-4:first-of-type{
+        width:100%;
+      }
     }
+    
   }
+  
+  
+
     
 }
 

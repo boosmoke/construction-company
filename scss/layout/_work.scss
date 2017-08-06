@@ -67,3 +67,16 @@
         float:none;
     }
 }
+
+@media (max-width:30rem ){
+
+    .work-section{
+        .work-item{
+            .work-item-container{
+                margin-top:5em;
+            }
+        }
+        
+    }
+
+}

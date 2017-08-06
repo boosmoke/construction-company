@@ -103,7 +103,7 @@ gulp.task("default", ['clean'], function(){
 gulp.task('build', ['compileSass', 'minifyScripts'], function(){
     // efter minifyScripts och compileSass är klar så return tar den alla följande filer och spottar ut dem till root directory
     // base i slutet gör så att allt kommer i sina korrekta folders annars kommer allt i en och samma folder
-    return gulp.src(['css/main.css', 'js/app.js', 'index.html', 'img/**'], { base: './'})
+    return gulp.src(['css/main.css', 'js/app.js', 'index.html', 'img/**','fonts/**'], { base: './'})
     // spotta ut allt till dist mappen 
     .pipe(gulp.dest('dist'));
 });
