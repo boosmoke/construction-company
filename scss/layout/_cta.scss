@@ -1,9 +1,8 @@
 
 #cta {
     position:relative;
-    .container{
-        padding:0;
-    }
+ 
+
    /* &:after{
         content:' ';
         position: absolute;
@@ -89,7 +88,7 @@
         
     
     &>div{
-        padding: 8em 0 3em;
+        padding: 8em 0 4em;
     }
 
     .button{
@@ -145,15 +144,12 @@
         position:relative;
         
         
-        &::after{
-            content: "\f10e";
-            font-family: FontAwesome;
-            position: absolute;
-            font-size:4em;
-            color:$gray-text;
-            bottom: -50px;
-            right:0;
-            left:0;
+        .fa{
+            font-size:5em;
+            margin:0;
+            padding:0;
+            margin-top:10px;
+            color: rgba($contact-text, .2);
         }
         
         p{
@@ -165,6 +161,25 @@
     }
     
 }
+@media (min-width:120em){
+    .cta-section .testimonial-text{
+        font-size:1.5em;
+    }
+    .cta-section .testimonial-title{
+        font-size:1.5em;
+    }
+    .cta-section .testimonial-company{
+        font-size:1.5em;
+    }
+    .cta-section .cta-contact{
+        .cta-text{
+            font-size:2em;
+        }
+        .omdomen{
+            font-size:2em;
+        }
+    }
+}
 @media (max-width:64rem ){
     .cta-section{
         &>div{
@@ -174,7 +189,9 @@
             font-size: .9em;
             padding: 1em 5em 1em;
         }
+        
     }
+    
 }
 @media (max-width:60rem ){
     

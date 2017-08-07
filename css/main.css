@@ -3685,6 +3685,7 @@ img {
     list-style: none;
     display: inline-block;
     height: 100%;
+    border: none;
   }
   .main-nav li {
     display: inline-block;
@@ -4125,10 +4126,6 @@ footer .copyright p {
     }*/
 }
 
-#cta .container {
-  padding: 0;
-}
-
 @media (max-width: 60rem) {
   #cta:before {
     width: 100%;
@@ -4189,7 +4186,7 @@ footer .copyright p {
 }
 
 .cta-section > div {
-  padding: 8em 0 3em;
+  padding: 8em 0 4em;
 }
 
 .cta-section .button {
@@ -4255,21 +4252,36 @@ footer .copyright p {
   position: relative;
 }
 
-.cta-section .testimonial-text::after {
-  content: "\f10e";
-  font-family: FontAwesome;
-  position: absolute;
-  font-size: 4em;
-  color: #737373;
-  bottom: -50px;
-  right: 0;
-  left: 0;
+.cta-section .testimonial-text .fa {
+  font-size: 5em;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  color: rgba(179, 179, 179, 0.2);
 }
 
 .cta-section .testimonial-text p {
   color: #fff;
   font-size: 1.2em;
   font-weight: 300;
+}
+
+@media (min-width: 120em) {
+  .cta-section .testimonial-text {
+    font-size: 1.5em;
+  }
+  .cta-section .testimonial-title {
+    font-size: 1.5em;
+  }
+  .cta-section .testimonial-company {
+    font-size: 1.5em;
+  }
+  .cta-section .cta-contact .cta-text {
+    font-size: 2em;
+  }
+  .cta-section .cta-contact .omdomen {
+    font-size: 2em;
+  }
 }
 
 @media (max-width: 64rem) {
