@@ -10288,6 +10288,9 @@ function activeLinkSwitcher(){
         scrollLink.each(function() {
         var sectionOffset = $(this.hash).offset().top -30;
         if ( sectionOffset <= scrollbarLocation ) {
+            if((this.hash) === "#work"){
+                $('#work').addClass('fadeInUp');
+            }
             $(this).parent().addClass('active');
             $(this).parent().siblings().removeClass('active');
         }

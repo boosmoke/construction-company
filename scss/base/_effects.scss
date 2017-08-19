@@ -32,6 +32,37 @@
   }
 }
 
-.bounceIn {
-  animation-name: bounceIn;
+.flexbox .bounceIn {
+  animation: bounceIn 5s linear 0s infinite;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.flexbox .slideInUp {
+  animation: slideInUp .5s linear 0s infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.flexbox .fadeInUp {
+  animation: fadeInUp 1s linear 0s 1 forwards;
 }
