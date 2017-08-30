@@ -3421,10 +3421,10 @@ p:last-of-type {
 }
 
 .flexbox .fadeInUp {
-  -webkit-animation: fadeInUp 1s linear 0s 1 forwards;
-     -moz-animation: fadeInUp 1s linear 0s 1 forwards;
-       -o-animation: fadeInUp 1s linear 0s 1 forwards;
-          animation: fadeInUp 1s linear 0s 1 forwards;
+  -webkit-animation: fadeInUp 2s linear 0s 1 forwards;
+     -moz-animation: fadeInUp 2s linear 0s 1 forwards;
+       -o-animation: fadeInUp 2s linear 0s 1 forwards;
+          animation: fadeInUp 2s linear 0s 1 forwards;
 }
 
 * {

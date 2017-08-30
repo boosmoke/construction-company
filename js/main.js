@@ -4,13 +4,14 @@ $(function(){
     // hamburger meny
     $('.nav-toggle').click(mobileMenuToggle);
 
-
     document.onscroll = stickyMenu;
 
     $('.button-testimonial').on('click', testimonialSwitch);
-    
+
     $('.main-nav a').on('click', smoothScroll);
+
     activeLinkSwitcher();
+
 
 });
 
@@ -35,7 +36,7 @@ function activeLinkSwitcher(){
         var sectionOffset = $(this.hash).offset().top -30;
         if ( sectionOffset <= scrollbarLocation ) {
             if((this.hash) === "#work"){
-                $('#work').addClass('fadeInUp');
+                //$('#work').addClass('fadeInUp');
             }
             $(this).parent().addClass('active');
             $(this).parent().siblings().removeClass('active');
@@ -92,5 +93,32 @@ function mobileMenuToggle(){
    return false;
 }
 
+//element in viewport
+function isElementInViewport (el) {
+    //special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+    }
+
+    var rect = el.getBoundingClientRect();
+    return rect.bottom > 0 &&
+        rect.right > 0 &&
+        rect.left < (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */ &&
+        rect.top < (window.innerHeight || document.documentElement.clientHeight)
+        
+}
+
+
+
+
+
+//jQuery
+$(window).scroll(function(){
+    if(isElementInViewport(document.getElementById('work'))){
+        console.log('view')
+    }
+    
+    //isElementInViewport(document.getElementById('about'))
+})
 
 
