@@ -2,14 +2,14 @@ $(function(){
     //fade in website
     $('body').removeClass('fade-out');
     // hamburger meny
-    $('.nav-toggle').click(mobileMenuToggle);
-
+    $('.nav-toggle').on('click',mobileMenuToggle);
+    //sticky menu
     document.onscroll = stickyMenu;
-
+    //testimonial
     $('.button-testimonial').on('click', testimonialSwitch);
-
+    //smooth scrolling
     $('.main-nav a').on('click', smoothScroll);
-
+    //active link display
     activeLinkSwitcher();
 
 
@@ -49,11 +49,6 @@ function activeLinkSwitcher(){
 
 /* ===========================================================================================*/
 /* ===========================================================================================*/
-//parralax scroll function
-function parallax(scrollTop){
-    var wScroll = scrollTop;
-    $('.parallax--bg').css('background-position', 'center '+(wScroll*0.6)+'px');
-};
 
 //Sticky menu
 function stickyMenu(){
@@ -93,6 +88,63 @@ function mobileMenuToggle(){
    return false;
 }
 
+
+(function(){
+  
+
+const slideImages = document.querySelectorAll('.slide-in-section');
+const botImage = document.querySelectorAll('.hero-title-image');
+///////
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		clearTimeout(timeout);
+		timeout = setTimeout(function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		}, wait);
+		if (immediate && !timeout) func.apply(context, args);
+	};
+}
+/////
+function slideIn(e){
+
+
+  slideImages.forEach(function(currentImage){
+    //image is halfway visible if its a image use currentImage.height, if its element use currentImage.offsetHeight
+    const slideInLoc = (window.scrollY + window.innerHeight)-currentImage.offsetHeight /2;
+    //pixel value of where image ends
+    const imageEnd = currentImage.offsetTop+currentImage.offsetHeight;
+    //check if image is in view, greater than halfway visible in this case
+    const isInView = slideInLoc > currentImage.offsetTop;
+    //if image is not scrolled past
+    const stillInView = window.scrollY < imageEnd;
+    console.log(window.getComputedStyle(currentImage).height);
+    if(isInView && stillInView){
+      currentImage.classList.add('active-section');
+    }else{
+      currentImage.classList.remove('active-section');
+    }
+  });
+}
+
+///////
+var slider = debounce(function(){
+  console.log('1');
+  slideIn();
+}, 20);
+
+
+window.addEventListener('scroll', slider);
+  
+}());
+
+
+
+///////JQUERY SCROLL REVEAL ////////
+
+/*
 //element in viewport
 function isElementInViewport (el) {
     //special bonus for those using jQuery
@@ -103,22 +155,25 @@ function isElementInViewport (el) {
     var rect = el.getBoundingClientRect();
     return rect.bottom > 0 &&
         rect.right > 0 &&
-        rect.left < (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */ &&
-        rect.top < (window.innerHeight || document.documentElement.clientHeight)
-        
+        rect.left < (window.innerWidth || document.documentElement.clientWidth) *//* or $(window).width() *//* &&
+        rect.top < (window.innerHeight || document.documentElement.clientHeight)    
 }
+*/
 
-
-
-
-
+/*
 //jQuery
 $(window).scroll(function(){
     if(isElementInViewport(document.getElementById('work'))){
         console.log('view')
     }
-    
-    //isElementInViewport(document.getElementById('about'))
-})
+})*/
 
-
+///////JQUERY SCROLL REVEAL ////////
+///////PARAlaX EFFECT ///////////
+//parralax scroll function
+/*function parallax(scrollTop){
+    var wScroll = scrollTop;
+    $('.parallax--bg').css('background-position', 'center '+(wScroll*0.6)+'px');
+};
+*/
+///////PARAlaX EFFECT ///////////

@@ -430,7 +430,28 @@ footer{
 
     
 }
-
+//slide in animation
+.slide-in-section{
+    opacity: 0;
+    transition: all .5s;
+}
+.align-bottom{
+  transform: translateY(30%) scale(.95);
+}
+.align-top{
+  transform: translateY(-30%) scale(.95);
+}
+.align-right{
+  transform: translateX(30%) scale(.95);
+}
+.align-left{
+    transform: translateX(-30%) scale(.95);
+}
+.slide-in-section.active-section{
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}
+//slide in animation
 .no-flexbox footer{
   display: block;
 }
