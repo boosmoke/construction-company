@@ -13,6 +13,17 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/modernizr-custom.js"></script>
+        <!--IE8-->
+        <script type="text/javascript">
+            document.createElement('header');
+            document.createElement('nav');
+            document.createElement('menu');
+            document.createElement('section');
+            document.createElement('article');
+            document.createElement('aside');
+            document.createElement('footer');
+        </script>
+        <!--IE8-->
     </head>
     <body>
         <!-- fade out body script <script>document.body.className += ' fade-out';</script> -->
@@ -240,9 +251,10 @@
             
         </footer>
 
-
         <!--[if !(IE 8)]><!-->
         <script src="js/app.js"></script>
+        <!--<![endif]-->
+        
         <script>
             // your inline script goes here
         </script>

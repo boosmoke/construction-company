@@ -54,7 +54,7 @@
         display: initial;
     }
 .no-flexbox .work-item{
-    width: calc(100%/3);
+    width: calc(100% * 0.33333);
     float:left;
     
 }

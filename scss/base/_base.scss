@@ -405,11 +405,14 @@ footer{
         width:calc(100%/3);
         padding: 0;
         h2{
-          margin: 0;
+          margin: 0 5px;
           font-size:1.3em;
           &::after{
-            right:20px;
-            top: 0px;
+            position: absolute;
+            top:0;
+            left:-15px;
+            transform: rotate(0);
+            z-index: 9999;
           }
         }
         ul{
@@ -431,23 +434,23 @@ footer{
     
 }
 //slide in animation
-.slide-in-section{
+.flexbox .slide-in-section{
     opacity: 0;
     transition: all .5s;
 }
-.align-bottom{
+.flexbox .align-bottom{
   transform: translateY(30%) scale(.95);
 }
-.align-top{
+.flexbox .align-top{
   transform: translateY(-30%) scale(.95);
 }
-.align-right{
+.flexbox .align-right{
   transform: translateX(30%) scale(.95);
 }
-.align-left{
+.flexbox .align-left{
     transform: translateX(-30%) scale(.95);
 }
-.slide-in-section.active-section{
+.flexbox .slide-in-section.active-section{
     opacity: 1;
     transform: translateX(0%) scale(1);
 }
