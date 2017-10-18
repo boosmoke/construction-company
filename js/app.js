@@ -10342,7 +10342,11 @@ function mobileMenuToggle(){
    return false;
 }
 
-
+/*Polyfill IE nodelist to array forEach*/
+(function () {
+    if ( typeof NodeList.prototype.forEach === "function" ) return false;
+    NodeList.prototype.forEach = Array.prototype.forEach;
+})();
 (function(){
   
 
@@ -10366,15 +10370,16 @@ function slideIn(e){
 
 
   slideImages.forEach(function(currentImage){
+
     //image is halfway visible if its a image use currentImage.height, if its element use currentImage.offsetHeight
-    const slideInLoc = (window.scrollY + window.innerHeight)-currentImage.offsetHeight /2;
+    const slideInLoc = (window.pageYOffset/*window.scrollY no support for IE*/ + window.innerHeight)-currentImage.offsetHeight /2;
     //pixel value of where image ends
     const imageEnd = currentImage.offsetTop+currentImage.offsetHeight;
     //check if image is in view, greater than halfway visible in this case
     const isInView = slideInLoc > currentImage.offsetTop;
     //if image is not scrolled past
-    const stillInView = window.scrollY < imageEnd;
-    console.log(window.getComputedStyle(currentImage).height);
+    const stillInView = window.pageYOffset/*window.scrollY no support for IE*/ < imageEnd;
+    console.log(currentImage.offsetTop)
     if(isInView && stillInView){
       currentImage.classList.add('active-section');
     }else{
@@ -10385,13 +10390,10 @@ function slideIn(e){
 
 ///////
 var slider = debounce(function(){
-  console.log('1');
   slideIn();
 }, 20);
-
-
 window.addEventListener('scroll', slider);
-  
+
 }());
 
 

@@ -9,8 +9,8 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="node_modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.css">
+        <link rel="stylesheet" href="css/normalize.css">    
         <link rel="stylesheet" href="css/main.css">
         <script src="js/modernizr-custom.js"></script>
         <!--IE8-->
@@ -64,9 +64,9 @@
         <!-- HERO SECTION -->
         <section id="home" class="home-hero parallax--bg">
             <div class="hero-container">
-                <img class="hero-title-image" src="../img/sep-line-white.png" alt="sep-line">
+                <img class="hero-title-image" src="img/sep-line-white.png" alt="sep-line">
                 <h1 class="title">CONSTRUCTION</h1>
-                <img class="hero-title-image" src="../img/sep-line-white.png" alt="sep-line">
+                <img class="hero-title-image" src="img/sep-line-white.png" alt="sep-line">
                 <span class="slogan">
                         YOU CAN COUNT ON!
                 </span>
@@ -250,13 +250,35 @@
             </div>
             
         </footer>
-
-        <!--[if !(IE 8)]><!-->
+        <div id="outdated"></div>
+        <script src="node_modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
         <script src="js/app.js"></script>
-        <!--<![endif]-->
+
         
         <script>
-            // your inline script goes here
+            //event listener: DOM ready 
+            function addLoadEvent(func) {
+                var oldonload = window.onload;
+                if (typeof window.onload != 'function') {
+                    window.onload = func;
+                } else {
+                    window.onload = function() {
+                        if (oldonload) {
+                            oldonload();
+                        }
+                        func();
+                    }
+                }
+            }
+            //call plugin function after DOM ready 
+            addLoadEvent(function(){
+                outdatedBrowser({
+                    bgColor: '#f25648',
+                    color: '#ffffff',
+                    lowerThan: 'transform',
+                    languagePath: 'node_modules/outdated-browser/outdatedbrowser/lang/en.html'
+                })
+            });
         </script>
         <!--<![endif]-->
 
