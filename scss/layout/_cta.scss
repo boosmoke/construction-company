@@ -35,8 +35,6 @@
         #cta{
             &:before{
                 width:100%;
-                
-                
             }
             &:after{
                 width:100%;
@@ -46,9 +44,8 @@
         
     }
 .cta-section{
-    //background: $cta-section;
     display:flex;
-    overflow:hidden; 
+    overflow:hidden;
     .cta-content-testimonial{
         background:$cta-section;
     }
@@ -163,21 +160,13 @@
 }
 @media (min-width:120em){
     .cta-section .testimonial-text{
-        font-size:1.5em;
+        font-size:1.2em;
     }
     .cta-section .testimonial-title{
-        font-size:1.5em;
+        font-size:1em;
     }
     .cta-section .testimonial-company{
-        font-size:1.5em;
-    }
-    .cta-section .cta-contact{
-        .cta-text{
-            font-size:2em;
-        }
-        .omdomen{
-            font-size:2em;
-        }
+        font-size:.9em;
     }
 }
 @media (max-width:64rem ){

@@ -54,7 +54,9 @@ footer{
   background-color: $yellow-main;
   margin-top: 1.5em;
 }
-
+.yellow-text{
+  color: #fbcf00;
+}
  /* Column system
 ===============*/
 
@@ -483,3 +485,38 @@ footer{
     padding-top:48px;
 }
 
+//scrollToTopButton
+.st-top {
+  display: block;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  background: $yellow-main;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  font-size:32px;
+  color: #fff;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.st-top.st-is-visible, .st-top.st-fade-out, .no-touch .st-top:hover {
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.st-top.st-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.st-top.st-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .st-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}

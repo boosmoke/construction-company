@@ -9,7 +9,8 @@ var gulp   = require('gulp'),
     del    = require('del'),
     connect= require('gulp-connect'),
     postcss = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer');
+    autoprefixer = require('autoprefixer'),
+    uglifycss = require('gulp-uglifycss');
 
 // denna tar alla javascript filer och gör dem till app.js
 gulp.task("concatJS", function(){
@@ -39,6 +40,17 @@ gulp.task('minifyScripts', ['concatJS'], function(){
     .pipe(gulp.dest('js'));
 });
 
+//Minify all css till en ny fil OBS DEMO. kan bara ändra outputstyle i sass till compressed
+gulp.task('minifyCSS', function(){
+    //tar app.js filen
+    gulp.src('css/*.css')
+    //minimerar den
+    .pipe(uglifycss())
+    //skapar ny fil med app.min.js
+    .pipe(rename('main.min.css'))
+    //skickar den till mappen /js/
+    .pipe(gulp.dest('./'));
+});
 
 //gör om sass/scss till css
 gulp.task('compileSass', function(){
