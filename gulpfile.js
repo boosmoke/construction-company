@@ -16,7 +16,7 @@ var gulp   = require('gulp'),
 gulp.task("concatJS", function(){
     //return gör så att denna görs innan minifyScripts
     // under src lägger du dina javascript filer som skall tas med
-    return gulp.src(['node_modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.js','node_modules/jquery/dist/jquery.js', 'js/main.js'])
+    return gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/outdatedbrowser/outdatedbrowser/outdatedbrowser.min.js', 'js/main.js'])
     //skapa en map fil för att se exakt vilken fil koden kommer från i webbläsaren
     .pipe(maps.init())
     //skapa en app.js fil för all kombinerad data
