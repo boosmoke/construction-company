@@ -48,6 +48,7 @@
     overflow:hidden;
     .cta-content-testimonial{
         background:$cta-section;
+        order:2;
     }
     .cta-contact{
         background: #fff url(../img/ctabg.png);
@@ -71,7 +72,7 @@
         height:35px;
         font-size: 25px;
         position:absolute;
-        z-index:2;
+        z-index:3;
         
     }
     .button-testimonial.next-testimonial{
@@ -115,15 +116,28 @@
         width:100%;
         padding:0;
         position:relative;
+        min-height:320px;
         .active-testimonial{
-            display:block;
+            opacity: 1;
+            visibility: visible;
+            z-index:2;
+            animation: bounceIn 800ms ease-in-out;
+        }
+    }
+    @media (max-width:60rem ){
+        .testimonial-slideshow-container{
+            min-height: 220px;
         }
     }
     .testimonial-container{
         min-height:320px;
-        display:none;
-        animation: bounceIn 800ms ease-in-out;
-        
+        display:block;
+        position: absolute;
+        opacity:0;
+        visibility: hidden;
+        top:0;
+        left:0;
+        z-index:0;
     }
 
     .testimonial-title{

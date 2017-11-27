@@ -16,7 +16,7 @@ var gulp   = require('gulp'),
 gulp.task("concatJS", function(){
     //return gör så att denna görs innan minifyScripts
     // under src lägger du dina javascript filer som skall tas med
-    return gulp.src(['node_modules/jquery/dist/jquery.js','js/inview.js', 'js/main.js'])
+    return gulp.src(['node_modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.js','node_modules/jquery/dist/jquery.js', 'js/main.js'])
     //skapa en map fil för att se exakt vilken fil koden kommer från i webbläsaren
     .pipe(maps.init())
     //skapa en app.js fil för all kombinerad data
@@ -58,7 +58,7 @@ gulp.task('compileSass', function(){
     gulp.src('scss/main.scss')
     //skapar en map fil för att se exakt vilken fil koden kommer från i webbläsaren
     //.pipe(maps.init())
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     //skriv till root
     //.pipe(maps.write('./'))
     //prefix css

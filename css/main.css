@@ -3097,6 +3097,85 @@
   clip: auto;
 }
 
+/*!--------------------------------------------------------------------
+STYLES "Outdated Browser"
+Version:    1.1.0 - 2014
+author:     Burocratik
+website:    http://www.burocratik.com
+* @preserve
+-----------------------------------------------------------------------*/
+#outdated {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1500;
+  background-color: #f25648;
+  color: #ffffff;
+}
+
+* html #outdated {
+  position: absolute;
+}
+
+#outdated h6 {
+  font-size: 25px;
+  line-height: 25px;
+  margin: 30px 0 10px;
+}
+
+#outdated p {
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0;
+}
+
+#outdated #btnUpdateBrowser {
+  display: block;
+  position: relative;
+  padding: 10px 20px;
+  margin: 30px auto 0;
+  width: 230px;
+  /*need for IE*/
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+}
+
+#outdated #btnUpdateBrowser:hover {
+  color: #f25648;
+  background-color: #ffffff;
+}
+
+#outdated .last {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  width: 20px;
+  height: 20px;
+}
+
+#outdated .last[dir='rtl'] {
+  right: auto !important;
+  left: 25px !important;
+}
+
+#outdated #btnCloseUpdateBrowser {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 36px;
+}
+
 .clearfix:after, section:after, footer:after, .no-flexbox .contact-header:after, footer .container:after, .work-section .container-full-width:after, .no-flexbox .contact-section .container:after {
   content: "";
   display: table;
@@ -4376,6 +4455,11 @@ footer .copyright p {
 
 .cta-section .cta-content-testimonial {
   background: #353537;
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+     -moz-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .cta-section .cta-contact {
@@ -4401,7 +4485,7 @@ footer .copyright p {
   height: 35px;
   font-size: 25px;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 }
 
 .cta-section .button-testimonial.next-testimonial {
@@ -4449,19 +4533,34 @@ footer .copyright p {
   width: 100%;
   padding: 0;
   position: relative;
+  min-height: 320px;
 }
 
 .cta-section .testimonial-slideshow-container .active-testimonial {
-  display: block;
-}
-
-.cta-section .testimonial-container {
-  min-height: 320px;
-  display: none;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
   -webkit-animation: bounceIn 800ms ease-in-out;
      -moz-animation: bounceIn 800ms ease-in-out;
        -o-animation: bounceIn 800ms ease-in-out;
           animation: bounceIn 800ms ease-in-out;
+}
+
+@media (max-width: 60rem) {
+  .cta-section .testimonial-slideshow-container {
+    min-height: 220px;
+  }
+}
+
+.cta-section .testimonial-container {
+  min-height: 320px;
+  display: block;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .cta-section .testimonial-title {

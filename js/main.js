@@ -5,7 +5,7 @@
     if ( typeof NodeList.prototype.forEach === "function" ) return false;
     NodeList.prototype.forEach = Array.prototype.forEach;
 })();
-//(function(){
+(function(){
     /* G L O B A L S */
     const slideImages = document.querySelectorAll('.slide-in-section');
     /* F U N C T I O N S */
@@ -100,7 +100,6 @@
         var el = $('.st-top');
         var offset = document.getElementById('about').offsetTop;
         var offset_opacity = document.getElementById('work').offsetTop;
-        console.log(offset);
         ( $(this).scrollTop() > offset ) ? el.addClass('st-is-visible') : el.removeClass('st-is-visible st-fade-out');
 		if( $(this).scrollTop() > offset_opacity ) { 
 			el.addClass('st-fade-out');
@@ -129,42 +128,4 @@
     //smooth scrolling backToTop link
     $('.st-top').on('click', smoothScroll);
 
-//}());
-
-
-
-///////JQUERY SCROLL REVEAL ////////
-
-/*
-//element in viewport
-function isElementInViewport (el) {
-    //special bonus for those using jQuery
-    if (typeof jQuery === "function" && el instanceof jQuery) {
-        el = el[0];
-    }
-
-    var rect = el.getBoundingClientRect();
-    return rect.bottom > 0 &&
-        rect.right > 0 &&
-        rect.left < (window.innerWidth || document.documentElement.clientWidth) *//* or $(window).width() *//* &&
-        rect.top < (window.innerHeight || document.documentElement.clientHeight)    
-}
-*/
-
-/*
-//jQuery
-$(window).scroll(function(){
-    if(isElementInViewport(document.getElementById('work'))){
-        console.log('view')
-    }
-})*/
-
-///////JQUERY SCROLL REVEAL ////////
-///////PARAlaX EFFECT ///////////
-//parralax scroll function
-/*function parallax(scrollTop){
-    var wScroll = scrollTop;
-    $('.parallax--bg').css('background-position', 'center '+(wScroll*0.6)+'px');
-};
-*/
-///////PARAlaX EFFECT ///////////
+}());
